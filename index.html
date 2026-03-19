@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengumuman Kelulusan SMK ISLAM JEPARA</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+    
+    @keyframes confetti {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100px) rotate(720deg); opacity: 0; }
+    }
+    
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .animate-shimmer { 
+      background: linear-gradient(90deg, #D4AF37, #FFD700, #D4AF37);
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+    .animate-pulse-ring { animation: pulse-ring 1.5s ease-out infinite; }
+    
+    .gradient-border {
+      background: linear-gradient(135deg, #0c2340, #1a365d);
+      position: relative;
+    }
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 3px;
+      background: linear-gradient(135deg, #D4AF37, #FFD700, #D4AF37);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      border-radius: inherit;
+    }
+    
+    .card-shadow {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                  0 0 40px rgba(212, 175, 55, 0.1);
+    }
+    
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      animation: confetti 2s ease-out forwards;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-auto"><!-- Decorative Background Elements -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+   <div class="absolute top-10 left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl"></div>
+   <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl"></div>
+  </div>
+  <div id="app" class="relative min-h-full w-full"><!-- Admin Login Modal -->
+   <div id="adminLoginModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl w-full md:max-w-md">
+     <div class="bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700 p-6 flex items-center justify-between">
+      <h2 class="text-2xl font-bold text-white flex items-center gap-3"><i data-lucide="shield-lock" class="w-6 h-6 text-amber-400"></i>Login Admin</h2><button id="closeAdminLogin" class="text-slate-400 hover:text-white transition-all"> <i data-lucide="x" class="w-6 h-6"></i> </button>
+     </div>
+     <div class="p-6 space-y-4">
+      <div>
+       <label class="block text-sm font-medium text-slate-300 mb-2">Username</label> <input type="text" id="adminUsername" placeholder="Masukkan username admin" class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" autocomplete="off">
+      </div>
+      <div>
+       <label class="block text-sm font-medium text-slate-300 mb-2">Password</label> <input type="password" id="adminPassword" placeholder="Masukkan password" class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" autocomplete="off">
+      </div>
+      <div id="adminLoginError" class="hidden bg-red-500/20 border border-red-500/50 rounded-lg p-3 text-red-300 text-sm"><i data-lucide="alert-circle" class="w-4 h-4 inline mr-2"></i>Username atau password salah
+      </div><button id="adminLoginBtn" class="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold rounded-lg transition-all">Login</button>
+     </div>
+    </div>
+   </div><!-- Admin Panel Toggle Button - Always Visible -->
+   <div class="fixed top-0 right-0 z-50">
+    <button id="adminToggle" class="m-4 p-3 bg-slate-700/80 hover:bg-slate-600 text-amber-400 rounded-full transition-all shadow-lg hover:shadow-amber-500/30"> <i data-lucide="settings" class="w-6 h-6"></i> </button>
+   </div><!-- Admin Menu Modal -->
+   <div id="adminMenuModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end md:items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl w-full md:max-w-2xl max-h-[90vh] overflow-y-auto">
+     <div class="sticky top-0 bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700 p-6 flex items-center justify-between">
+      <h2 class="text-2xl font-bold text-white flex items-center gap-3"><i data-lucide="shield" class="w-6 h-6 text-amber-400"></i>Panel Admin</h2>
+      <div class="flex items-center gap-3">
+       <button id="logoutBtn" class="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-300 text-sm rounded-lg transition-all flex items-center gap-2"> <i data-lucide="log-out" class="w-4 h-4"></i>Logout </button> <button id="closeAdminMenu" class="text-slate-400 hover:text-white transition-all"> <i data-lucide="x" class="w-6 h-6"></i> </button>
+      </div>
+     </div>
+     <div class="p-6 space-y-4"><!-- Menu Items --> <button class="admin-menu-btn w-full p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition-all flex items-center justify-between group" data-menu="import">
+       <div class="flex items-center gap-3 text-left"><i data-lucide="file-up" class="w-6 h-6 text-amber-400 group-hover:text-amber-300"></i>
+        <div>
+         <p class="font-semibold text-white">Impor Data Siswa</p>
+         <p class="text-xs text-slate-400">Unggah file Excel dengan data siswa</p>
+        </div>
+       </div><i data-lucide="chevron-right" class="w-5 h-5 text-slate-500"></i> </button> <button class="admin-menu-btn w-full p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition-all flex items-center justify-between group" data-menu="manage">
+       <div class="flex items-center gap-3 text-left"><i data-lucide="users" class="w-6 h-6 text-blue-400 group-hover:text-blue-300"></i>
+        <div>
+         <p class="font-semibold text-white">Kelola Data Siswa</p>
+         <p class="text-xs text-slate-400">Lihat, edit, atau hapus data siswa</p>
+        </div>
+       </div><i data-lucide="chevron-right" class="w-5 h-5 text-slate-500"></i> </button> <button class="admin-menu-btn w-full p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition-all flex items-center justify-between group" data-menu="export">
+       <div class="flex items-center gap-3 text-left"><i data-lucide="download" class="w-6 h-6 text-emerald-400 group-hover:text-emerald-300"></i>
+        <div>
+         <p class="font-semibold text-white">Ekspor Data</p>
+         <p class="text-xs text-slate-400">Unduh data siswa dalam format Excel</p>
+        </div>
+       </div><i data-lucide="chevron-right" class="w-5 h-5 text-slate-500"></i> </button> <button class="admin-menu-btn w-full p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition-all flex items-center justify-between group" data-menu="logo">
+       <div class="flex items-center gap-3 text-left"><i data-lucide="image" class="w-6 h-6 text-pink-400 group-hover:text-pink-300"></i>
+        <div>
+         <p class="font-semibold text-white">Ganti Logo Sekolah</p>
+         <p class="text-xs text-slate-400">Unggah gambar logo sekolah</p>
+        </div>
+       </div><i data-lucide="chevron-right" class="w-5 h-5 text-slate-500"></i> </button> <button class="admin-menu-btn w-full p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition-all flex items-center justify-between group" data-menu="settings">
+       <div class="flex items-center gap-3 text-left"><i data-lucide="sliders" class="w-6 h-6 text-purple-400 group-hover:text-purple-300"></i>
+        <div>
+         <p class="font-semibold text-white">Pengaturan Halaman</p>
+         <p class="text-xs text-slate-400">Ubah nama sekolah, tahun ajaran, dll</p>
+        </div>
+       </div><i data-lucide="chevron-right" class="w-5 h-5 text-slate-500"></i> </button>
+      <div class="pt-4 border-t border-slate-700">
+       <p class="text-xs text-slate-400 mb-3">Statistik Data:</p>
+       <div class="grid grid-cols-3 gap-3">
+        <div class="bg-slate-700/30 rounded-lg p-3 text-center">
+         <p class="text-2xl font-bold text-amber-400" id="studentCount">0</p>
+         <p class="text-xs text-slate-400 mt-1">Total Siswa</p>
+        </div>
+        <div class="bg-slate-700/30 rounded-lg p-3 text-center">
+         <p class="text-2xl font-bold text-emerald-400" id="passCount">0</p>
+         <p class="text-xs text-slate-400 mt-1">Lulus</p>
+        </div>
+        <div class="bg-slate-700/30 rounded-lg p-3 text-center">
+         <p class="text-2xl font-bold text-red-400" id="failCount">0</p>
+         <p class="text-xs text-slate-400 mt-1">Tidak Lulus</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Import Data Panel -->
+   <div id="importPanel" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end md:items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl w-full md:max-w-md">
+     <div class="bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700 p-6 flex items-center justify-between">
+      <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="upload" class="w-5 h-5 text-amber-400"></i>Impor Data Siswa</h3><button class="admin-back-btn text-slate-400 hover:text-white transition-all"> <i data-lucide="chevron-left" class="w-5 h-5"></i> </button>
+     </div>
+     <div class="p-6 space-y-4">
+      <div class="bg-slate-700/30 rounded-xl p-4 border border-slate-600/50">
+       <p class="text-slate-300 text-sm mb-3">Format Excel yang diperlukan:</p>
+       <div class="text-xs text-slate-400 space-y-1 bg-slate-900/50 p-3 rounded">
+        <p>Kolom 1: NO</p>
+        <p>Kolom 2: NAMA LENGKAP</p>
+        <p>Kolom 3: NISN</p>
+        <p>Kolom 4: KELAS</p>
+        <p>Kolom 5: TEMPAT, TANGGAL LAHIR</p>
+        <p>Kolom 6: STATUS KELULUSAN</p>
+       </div>
+      </div>
+      <div>
+       <label class="block text-sm font-medium text-slate-300 mb-2"> <i data-lucide="file-text" class="w-4 h-4 inline mr-2"></i>Pilih File Excel </label> <input type="file" id="excelFile" accept=".xlsx,.xls,.csv" class="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white text-sm cursor-pointer hover:border-amber-500/50 transition-all">
+      </div><button id="uploadExcelBtn" class="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-2"> <i data-lucide="upload" class="w-4 h-4"></i>Impor Data </button>
+      <div id="uploadStatus" class="hidden p-3 rounded-lg text-sm"></div>
+     </div>
+    </div>
+   </div><!-- Manage Data Panel -->
+   <div id="managePanel" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end md:items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl w-full md:max-w-2xl max-h-[90vh] overflow-y-auto">
+     <div class="sticky top-0 bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700 p-6 flex items-center justify-between">
+      <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-blue-400"></i>Kelola Data Siswa</h3><button class="admin-back-btn text-slate-400 hover:text-white transition-all"> <i data-lucide="chevron-left" class="w-5 h-5"></i> </button>
+     </div>
+     <div class="p-6">
+      <div id="studentList" class="space-y-3 max-h-[70vh] overflow-y-auto"></div>
+     </div>
+    </div>
+   </div><!-- Logo Upload Panel -->
+   <div id="logoPanel" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end md:items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl w-full md:max-w-md">
+     <div class="bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700 p-6 flex items-center justify-between">
+      <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="image" class="w-5 h-5 text-pink-400"></i>Ganti Logo Sekolah</h3><button class="admin-back-btn text-slate-400 hover:text-white transition-all"> <i data-lucide="chevron-left" class="w-5 h-5"></i> </button>
+     </div>
+     <div class="p-6 space-y-4">
+      <div class="bg-slate-700/30 rounded-xl p-4 border border-slate-600/50 text-center">
+       <div id="logoPreview" class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg mb-3"><i data-lucide="graduation-cap" class="w-12 h-12 text-white"></i>
+       </div>
+       <p class="text-slate-300 text-sm">Preview Logo</p>
+      </div>
+      <div>
+       <label class="block text-sm font-medium text-slate-300 mb-2"> <i data-lucide="image" class="w-4 h-4 inline mr-2"></i>Pilih File Gambar </label> <input type="file" id="logoFile" accept="image/png,image/jpeg,image/jpg,image/gif,image/webp" class="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white text-sm cursor-pointer hover:border-pink-500/50 transition-all">
+       <p class="text-xs text-slate-400 mt-2">Format: PNG, JPG, GIF, WebP (Max 5MB)</p>
+      </div><button id="uploadLogoBtn" class="w-full py-3 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-2"> <i data-lucide="upload" class="w-4 h-4"></i>Unggah Logo </button>
+      <div id="logoUploadStatus" class="hidden p-3 rounded-lg text-sm"></div>
+     </div>
+    </div>
+   </div><!-- Settings Panel -->
+   <div id="settingsPanel" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end md:items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl w-full md:max-w-md">
+     <div class="bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700 p-6 flex items-center justify-between">
+      <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="sliders" class="w-5 h-5 text-purple-400"></i>Pengaturan Halaman</h3><button class="admin-back-btn text-slate-400 hover:text-white transition-all"> <i data-lucide="chevron-left" class="w-5 h-5"></i> </button>
+     </div>
+     <div class="p-6 space-y-4">
+      <div><label class="block text-sm font-medium text-slate-300 mb-2">Nama Sekolah</label> <input type="text" id="settingSchoolName" placeholder="SMK ISLAM JEPARA" class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div>
+      <div><label class="block text-sm font-medium text-slate-300 mb-2">Tahun Ajaran</label> <input type="text" id="settingAcademicYear" placeholder="2025/2026" class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div>
+      <div><label class="block text-sm font-medium text-slate-300 mb-2">Judul Pengumuman</label> <input type="text" id="settingTitle" placeholder="Pengumuman Kelulusan" class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div><button id="saveSetting" class="w-full py-3 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all">Simpan Perubahan</button>
+     </div>
+    </div>
+   </div><!-- Login Page -->
+   <div id="loginPage" class="min-h-full flex items-center justify-center p-4 py-8">
+    <div class="w-full max-w-md"><!-- School Logo & Header -->
+     <div class="text-center mb-8 animate-fadeInUp" style="animation-delay: 0.1s;">
+      <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg shadow-amber-500/30 mb-4 animate-float"><i data-lucide="graduation-cap" class="w-12 h-12 text-white"></i>
+      </div>
+      <h1 id="schoolNameDisplay" class="text-2xl md:text-3xl font-bold text-white font-playfair mb-2">SMK ISLAM JEPARA</h1>
+      <p class="text-amber-400/80 text-sm tracking-widest uppercase">Tahun Ajaran <span id="academicYearDisplay">2024/2025</span></p>
+     </div><!-- Login Card -->
+     <div class="gradient-border rounded-2xl card-shadow animate-fadeInUp" style="animation-delay: 0.3s;">
+      <div class="bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl p-8">
+       <div class="text-center mb-6">
+        <h2 id="announcementTitleDisplay" class="text-xl font-semibold text-white mb-2">Pengumuman Kelulusan</h2>
+        <p class="text-slate-400 text-sm">Siswa Kelas XII</p>
+       </div>
+       <form id="loginForm" class="space-y-5">
+        <div><label class="block text-sm font-medium text-slate-300 mb-2"> <i data-lucide="user" class="w-4 h-4 inline mr-2"></i>Nama Lengkap </label> <input type="text" id="namaInput" placeholder="Masukkan nama lengkap" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all" required>
+        </div>
+        <div><label class="block text-sm font-medium text-slate-300 mb-2"> <i data-lucide="hash" class="w-4 h-4 inline mr-2"></i>NISN </label> <input type="text" id="nisnInput" placeholder="Masukkan NISN (10 digit)" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all" required>
+        </div>
+        <div id="errorMessage" class="hidden bg-red-500/20 border border-red-500/50 rounded-xl p-4 text-red-300 text-sm"><i data-lucide="alert-circle" class="w-4 h-4 inline mr-2"></i> <span>Data tidak ditemukan. Periksa kembali Nama dan NISN Anda.</span>
+        </div><button type="submit" class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold rounded-xl shadow-lg shadow-amber-500/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"> <i data-lucide="search" class="w-5 h-5"></i> Cek Kelulusan </button>
+       </form>
+       <div class="mt-6 pt-6 border-t border-slate-700">
+        <p class="text-slate-400 text-xs text-center">Masukkan nama lengkap dan NISN sesuai dengan data yang terdaftar</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Result Page -->
+   <div id="resultPage" class="hidden min-h-full flex items-center justify-center p-4 py-8">
+    <div class="w-full max-w-lg"><!-- Confetti Container -->
+     <div id="confettiContainer" class="fixed inset-0 pointer-events-none overflow-hidden"></div><!-- Result Card -->
+     <div class="gradient-border rounded-3xl card-shadow animate-fadeInUp">
+      <div class="bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-xl rounded-3xl p-8 md:p-10"><!-- Header -->
+       <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg mb-4 relative">
+         <div class="absolute inset-0 rounded-full bg-amber-400/30 animate-pulse-ring"></div><i data-lucide="graduation-cap" class="w-10 h-10 text-white relative z-10"></i>
+        </div>
+        <h2 id="resultSchoolName" class="text-xl font-bold text-white font-playfair">SMK ISLAM JEPARA</h2>
+        <p class="text-slate-400 text-sm mt-1">Tahun Ajaran <span id="resultAcademicYear">2024/2025</span></p>
+       </div><!-- Divider -->
+       <div class="flex items-center gap-4 my-6">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div><i data-lucide="star" class="w-5 h-5 text-amber-500"></i>
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
+       </div><!-- Student Info -->
+       <div class="space-y-4 mb-6">
+        <div class="bg-slate-700/30 rounded-xl p-4">
+         <p class="text-slate-400 text-xs uppercase tracking-wider mb-1">Nama Lengkap</p>
+         <p id="resultNama" class="text-white font-semibold text-lg">-</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+         <div class="bg-slate-700/30 rounded-xl p-4">
+          <p class="text-slate-400 text-xs uppercase tracking-wider mb-1">NISN</p>
+          <p id="resultNISN" class="text-white font-medium">-</p>
+         </div>
+         <div class="bg-slate-700/30 rounded-xl p-4">
+          <p class="text-slate-400 text-xs uppercase tracking-wider mb-1">Kelas</p>
+          <p id="resultKelas" class="text-white font-medium">-</p>
+         </div>
+        </div>
+        <div class="bg-slate-700/30 rounded-xl p-4">
+         <p class="text-slate-400 text-xs uppercase tracking-wider mb-1">Tempat, Tanggal Lahir</p>
+         <p id="resultTTL" class="text-white font-medium">-</p>
+        </div>
+       </div><!-- Status Badge -->
+       <div id="statusContainer" class="text-center py-6">
+        <div class="inline-block">
+         <div class="relative">
+          <div class="absolute inset-0 bg-emerald-500/20 blur-2xl rounded-full"></div>
+          <div class="relative bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl px-10 py-4 shadow-lg shadow-emerald-500/30">
+           <p class="text-emerald-100 text-xs uppercase tracking-widest mb-1">Status Kelulusan</p>
+           <h3 id="resultStatus" class="text-3xl md:text-4xl font-bold text-white animate-shimmer">LULUS</h3>
+          </div>
+         </div>
+        </div>
+       </div><!-- Congratulations Message -->
+       <div class="text-center mb-6">
+        <p class="text-slate-300 leading-relaxed">Selamat atas kelulusannya! 🎉<br><span class="text-amber-400">Semoga sukses di masa depan!</span></p>
+       </div><!-- SKL Notice -->
+       <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 mb-6">
+        <div class="flex items-start gap-3"><i data-lucide="info" class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5"></i>
+         <div>
+          <p class="text-amber-200 text-sm font-medium mb-1">Informasi SKL</p>
+          <p class="text-slate-300 text-xs leading-relaxed">Jika menghendaki SKL (Surat Keterangan Lulus) bisa datang ke Kantor Tata Usaha SMK ISLAM Jepara. Pada Hari &amp; Jam Operasional Sekolah (Senin s.d Jumat 07.00-15.00).</p>
+         </div>
+        </div>
+       </div><!-- Back Button --> <button id="backButton" class="w-full py-3 bg-slate-700/50 hover:bg-slate-700 text-slate-300 hover:text-white font-medium rounded-xl transition-all flex items-center justify-center gap-2"> <i data-lucide="arrow-left" class="w-5 h-5"></i> Kembali </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script>
+
+    // Student Data (initialized empty, will be populated via file upload)
+    let studentData = [
+      { no: 1, nama: "AHMAD ABI ANANTA", nisn: "0075930946", kelas: "XII AT", ttl: "JEPARA", status: "LULUS" },
+      { no: 2, nama: "ANDIKA LUKMAN HAKIM", nisn: "0049421788", kelas: "XII AT", ttl: "JEPARA", status: "LULUS" },
+      { no: 3, nama: "ARIF IMAM WAHYUDI", nisn: "3075079864", kelas: "XII AT", ttl: "JEPARA", status: "LULUS" }
+    ];
+
+    // Default Config
+    const defaultConfig = {
+      school_name: "SMK ISLAM JEPARA",
+      academic_year: "2025/2026",
+      announcement_title: "Pengumuman Kelulusan",
+      primary_color: "#0f172a",
+      secondary_color: "#1e293b",
+      accent_color: "#f59e0b",
+      text_color: "#ffffff",
+      surface_color: "#334155"
+    };
+
+    // Admin Panel Elements
+    const adminToggle = document.getElementById('adminToggle');
+    const adminMenuModal = document.getElementById('adminMenuModal');
+    const closeAdminMenu = document.getElementById('closeAdminMenu');
+    const importPanel = document.getElementById('importPanel');
+    const managePanel = document.getElementById('managePanel');
+    const logoPanel = document.getElementById('logoPanel');
+    const settingsPanel = document.getElementById('settingsPanel');
+    const excelFile = document.getElementById('excelFile');
+    const uploadExcelBtn = document.getElementById('uploadExcelBtn');
+    const uploadStatus = document.getElementById('uploadStatus');
+
+    // Admin credentials (simple hardcoded for demo)
+    const adminCredentials = {
+      username: 'admin',
+      password: 'admin123'
+    };
+
+    let isAdminLoggedIn = false;
+
+    // Admin login elements
+    const adminLoginModal = document.getElementById('adminLoginModal');
+    const adminUsername = document.getElementById('adminUsername');
+    const adminPassword = document.getElementById('adminPassword');
+    const adminLoginBtn = document.getElementById('adminLoginBtn');
+    const adminLoginError = document.getElementById('adminLoginError');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const closeAdminLogin = document.getElementById('closeAdminLogin');
+
+    // Close login modal
+    closeAdminLogin.addEventListener('click', () => {
+      adminLoginModal.classList.add('hidden');
+      adminUsername.value = '';
+      adminPassword.value = '';
+      adminLoginError.classList.add('hidden');
+    });
+
+    // Handle admin login
+    adminLoginBtn.addEventListener('click', () => {
+      const username = adminUsername.value.trim();
+      const password = adminPassword.value;
+
+      if (username === adminCredentials.username && password === adminCredentials.password) {
+        isAdminLoggedIn = true;
+        adminLoginError.classList.add('hidden');
+        adminLoginModal.classList.add('hidden');
+        adminMenuModal.classList.remove('hidden');
+        updateStats();
+      } else {
+        adminLoginError.classList.remove('hidden');
+      }
+    });
+
+    // Handle logout
+    logoutBtn.addEventListener('click', () => {
+      isAdminLoggedIn = false;
+      adminMenuModal.classList.add('hidden');
+      adminLoginModal.classList.remove('hidden');
+      adminUsername.value = '';
+      adminPassword.value = '';
+      adminLoginError.classList.add('hidden');
+    });
+
+    // Toggle admin menu modal
+    adminToggle.addEventListener('click', () => {
+      if (isAdminLoggedIn) {
+        adminMenuModal.classList.toggle('hidden');
+        updateStats();
+      } else {
+        adminLoginModal.classList.remove('hidden');
+      }
+    });
+
+    closeAdminMenu.addEventListener('click', () => {
+      adminMenuModal.classList.add('hidden');
+    });
+
+    adminMenuModal.addEventListener('click', (e) => {
+      if (e.target === adminMenuModal) {
+        adminMenuModal.classList.add('hidden');
+      }
+    });
+
+    // Admin menu button handlers
+    document.querySelectorAll('.admin-menu-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const menu = btn.dataset.menu;
+        adminMenuModal.classList.add('hidden');
+        
+        if (menu === 'import') {
+          importPanel.classList.remove('hidden');
+        } else if (menu === 'manage') {
+          managePanel.classList.remove('hidden');
+          renderStudentList();
+        } else if (menu === 'export') {
+          exportToExcel();
+        } else if (menu === 'logo') {
+          logoPanel.classList.remove('hidden');
+        } else if (menu === 'settings') {
+          settingsPanel.classList.remove('hidden');
+          loadSettings();
+        }
+      });
+    });
+
+    // Back button handlers
+    document.querySelectorAll('.admin-back-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        importPanel.classList.add('hidden');
+        managePanel.classList.add('hidden');
+        settingsPanel.classList.add('hidden');
+        logoPanel.classList.add('hidden');
+        adminMenuModal.classList.remove('hidden');
+      });
+    });
+
+    // Close panels when clicking backdrop
+    importPanel.addEventListener('click', (e) => {
+      if (e.target === importPanel) {
+        importPanel.classList.add('hidden');
+      }
+    });
+
+    managePanel.addEventListener('click', (e) => {
+      if (e.target === managePanel) {
+        managePanel.classList.add('hidden');
+      }
+    });
+
+    logoPanel.addEventListener('click', (e) => {
+      if (e.target === logoPanel) {
+        logoPanel.classList.add('hidden');
+      }
+    });
+
+    settingsPanel.addEventListener('click', (e) => {
+      if (e.target === settingsPanel) {
+        settingsPanel.classList.add('hidden');
+      }
+    });
+
+    // Update statistics
+    function updateStats() {
+      const total = studentData.length;
+      const pass = studentData.filter(s => s.status === 'LULUS').length;
+      const fail = total - pass;
+      
+      document.getElementById('studentCount').textContent = total;
+      document.getElementById('passCount').textContent = pass;
+      document.getElementById('failCount').textContent = fail;
+    }
+
+    // Render student list
+    function renderStudentList() {
+      const listContainer = document.getElementById('studentList');
+      listContainer.innerHTML = '';
+
+      if (studentData.length === 0) {
+        listContainer.innerHTML = '<div class="text-center py-8 text-slate-400">Belum ada data siswa</div>';
+        return;
+      }
+
+      studentData.forEach((student, index) => {
+        const item = document.createElement('div');
+        item.className = 'bg-slate-700/50 rounded-xl p-4 hover:bg-slate-700 transition-all';
+        item.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <p class="text-white font-semibold">${student.nama}</p>
+              <p class="text-slate-400 text-xs mt-1">NISN: ${student.nisn}</p>
+              <p class="text-slate-400 text-xs">Kelas: ${student.kelas}</p>
+              <span class="inline-block mt-2 px-3 py-1 rounded-full text-xs font-medium ${student.status === 'LULUS' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-red-500/20 text-red-300'}">
+                ${student.status}
+              </span>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="deleteStudent(${index})" class="p-2 bg-red-500/20 hover:bg-red-500/30 text-red-300 rounded-lg transition-all" title="Hapus">
+                <i data-lucide="trash-2" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+        listContainer.appendChild(item);
+      });
+      
+      lucide.createIcons();
+    }
+
+    // Delete student
+    function deleteStudent(index) {
+      if (confirm(`Hapus data ${studentData[index].nama}?`)) {
+        studentData.splice(index, 1);
+        renderStudentList();
+        updateStats();
+      }
+    }
+
+    // Export to Excel
+    function exportToExcel() {
+      const ws_data = [
+        ['NO', 'NAMA LENGKAP', 'NISN', 'KELAS', 'TEMPAT, TANGGAL LAHIR', 'STATUS KELULUSAN'],
+        ...studentData.map((s, i) => [s.no || i + 1, s.nama, s.nisn, s.kelas, s.ttl, s.status])
+      ];
+
+      const ws = XLSX.utils.aoa_to_sheet(ws_data);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Data Siswa');
+      XLSX.writeFile(wb, 'Data_Siswa_SMK_ISLAM_JEPARA.xlsx');
+      
+      adminMenuModal.classList.remove('hidden');
+    }
+
+    // Load settings
+    function loadSettings() {
+      document.getElementById('settingSchoolName').value = defaultConfig.school_name;
+      document.getElementById('settingAcademicYear').value = defaultConfig.academic_year;
+      document.getElementById('settingTitle').value = defaultConfig.announcement_title;
+    }
+
+    // Save settings
+    document.getElementById('saveSetting').addEventListener('click', () => {
+      const schoolName = document.getElementById('settingSchoolName').value;
+      const academicYear = document.getElementById('settingAcademicYear').value;
+      const title = document.getElementById('settingTitle').value;
+
+      if (window.elementSdk) {
+        window.elementSdk.setConfig({
+          school_name: schoolName,
+          academic_year: academicYear,
+          announcement_title: title
+        });
+      }
+
+      defaultConfig.school_name = schoolName;
+      defaultConfig.academic_year = academicYear;
+      defaultConfig.announcement_title = title;
+
+      settingsPanel.classList.add('hidden');
+      adminMenuModal.classList.remove('hidden');
+    });
+
+    // Handle logo upload
+    const logoFile = document.getElementById('logoFile');
+    const uploadLogoBtn = document.getElementById('uploadLogoBtn');
+    const logoUploadStatus = document.getElementById('logoUploadStatus');
+    const logoPreview = document.getElementById('logoPreview');
+
+    uploadLogoBtn.addEventListener('click', () => {
+      const file = logoFile.files[0];
+      
+      if (!file) {
+        showLogoUploadStatus('Silakan pilih file gambar terlebih dahulu', 'error');
+        return;
+      }
+
+      // Check file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        showLogoUploadStatus('❌ Ukuran file terlalu besar. Maksimal 5MB.', 'error');
+        return;
+      }
+
+      // Check file type
+      if (!['image/png', 'image/jpeg', 'image/jpg', 'image/gif', 'image/webp'].includes(file.type)) {
+        showLogoUploadStatus('❌ Format file tidak didukung. Gunakan PNG, JPG, GIF, atau WebP.', 'error');
+        return;
+      }
+
+      uploadLogoBtn.disabled = true;
+      uploadLogoBtn.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i>Memproses...';
+      lucide.createIcons();
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const imageUrl = e.target.result;
+        
+        // Update logo preview
+        logoPreview.innerHTML = `<img src="${imageUrl}" alt="Logo Sekolah" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+        
+        // Update all logo displays on both pages
+        const loginLogoContainer = document.querySelector('#loginPage .inline-flex');
+        if (loginLogoContainer) {
+          loginLogoContainer.innerHTML = `<img src="${imageUrl}" alt="Logo Sekolah" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+        }
+        
+        const resultLogoContainer = document.querySelector('#resultPage .inline-flex');
+        if (resultLogoContainer) {
+          resultLogoContainer.innerHTML = `<img src="${imageUrl}" alt="Logo Sekolah" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+        }
+
+        showLogoUploadStatus('✅ Logo berhasil diperbarui!', 'success');
+        uploadLogoBtn.disabled = false;
+        uploadLogoBtn.innerHTML = '<i data-lucide="upload" class="w-4 h-4"></i>Unggah Logo';
+        lucide.createIcons();
+
+        setTimeout(() => {
+          logoPanel.classList.add('hidden');
+          logoFile.value = '';
+          logoUploadStatus.classList.add('hidden');
+          adminMenuModal.classList.remove('hidden');
+        }, 1500);
+      };
+
+      reader.onerror = () => {
+        showLogoUploadStatus('❌ Gagal membaca file gambar.', 'error');
+        uploadLogoBtn.disabled = false;
+        uploadLogoBtn.innerHTML = '<i data-lucide="upload" class="w-4 h-4"></i>Unggah Logo';
+        lucide.createIcons();
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    function showLogoUploadStatus(message, type) {
+      logoUploadStatus.textContent = message;
+      logoUploadStatus.className = `p-3 rounded-lg text-sm ${
+        type === 'success' 
+          ? 'bg-emerald-500/20 border border-emerald-500/50 text-emerald-300' 
+          : 'bg-red-500/20 border border-red-500/50 text-red-300'
+      }`;
+      logoUploadStatus.classList.remove('hidden');
+      if (type === 'success') {
+        setTimeout(() => logoUploadStatus.classList.add('hidden'), 3000);
+      }
+    }
+
+    // Wait for XLSX library to load
+    function waitForXLSX(callback, attempts = 0) {
+      if (typeof XLSX !== 'undefined') {
+        callback();
+      } else if (attempts < 30) {
+        setTimeout(() => waitForXLSX(callback, attempts + 1), 100);
+      } else {
+        showUploadStatus('❌ Library XLSX gagal dimuat. Refresh halaman dan coba lagi.', 'error');
+        uploadExcelBtn.disabled = false;
+        uploadExcelBtn.innerHTML = '<i data-lucide="upload" class="w-4 h-4"></i>Impor Data';
+      }
+    }
+
+    // Handle Excel file upload
+    uploadExcelBtn.addEventListener('click', () => {
+      if (!isAdminLoggedIn) {
+        showUploadStatus('Anda harus login sebagai admin terlebih dahulu', 'error');
+        return;
+      }
+
+      const file = excelFile.files[0];
+      if (!file) {
+        showUploadStatus('Silakan pilih file terlebih dahulu', 'error');
+        return;
+      }
+
+      uploadExcelBtn.disabled = true;
+      uploadExcelBtn.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i>Memproses...';
+      lucide.createIcons();
+
+      waitForXLSX(() => {
+        try {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const data = new Uint8Array(e.target.result);
+              const workbook = XLSX.read(data, { type: 'array' });
+              
+              if (!workbook || !workbook.SheetNames || workbook.SheetNames.length === 0) {
+                throw new Error('File Excel tidak valid atau kosong');
+              }
+
+              const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+              const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: '', blankrows: false });
+
+              if (!rows || rows.length < 2) {
+                throw new Error('File Excel harus memiliki minimal 2 baris (header + 1 data)');
+              }
+
+              const importedData = [];
+              let errorDetails = [];
+              
+              for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                
+                if (!row || row.every(cell => cell === undefined || cell === '' || cell === null)) {
+                  continue;
+                }
+
+                const nama = (row[1] || '').toString().trim().toUpperCase();
+                const nisn = (row[2] || '').toString().trim();
+
+                if (!nama || !nisn) {
+                  errorDetails.push(`Baris ${i + 1}: Nama atau NISN kosong`);
+                  continue;
+                }
+
+                const no = row[0] !== undefined && row[0] !== '' ? row[0].toString().trim() : (importedData.length + 1);
+                const kelas = (row[3] || '-').toString().trim();
+                const ttl = (row[4] || '-').toString().trim();
+                const status = (row[5] || 'LULUS').toString().trim().toUpperCase();
+
+                importedData.push({
+                  no: no,
+                  nama: nama,
+                  nisn: nisn,
+                  kelas: kelas,
+                  ttl: ttl,
+                  status: status
+                });
+              }
+
+              if (importedData.length === 0) {
+                let message = '❌ Tidak ada data siswa yang valid ditemukan.\n\nFormat Excel:\n';
+                message += 'Kolom A: NO\n';
+                message += 'Kolom B: NAMA LENGKAP ✓\n';
+                message += 'Kolom C: NISN ✓\n';
+                message += 'Kolom D: KELAS\n';
+                message += 'Kolom E: TEMPAT, TANGGAL LAHIR\n';
+                message += 'Kolom F: STATUS KELULUSAN\n\n';
+                message += 'Contoh Baris 2:\n1 | AHMAD ABI | 0075930946 | XII | JEPARA | LULUS';
+                if (errorDetails.length > 0) {
+                  message += '\n\nError:\n' + errorDetails.slice(0, 5).join('\n');
+                }
+                showUploadStatus(message, 'error');
+                uploadExcelBtn.disabled = false;
+                uploadExcelBtn.innerHTML = '<i data-lucide="upload" class="w-4 h-4"></i>Impor Data';
+                return;
+              }
+
+              studentData = importedData;
+              showUploadStatus(`✅ Berhasil! ${importedData.length} siswa terimport`, 'success');
+              
+              setTimeout(() => {
+                importPanel.classList.add('hidden');
+                excelFile.value = '';
+                uploadExcelBtn.disabled = false;
+                uploadExcelBtn.innerHTML = '<i data-lucide="upload" class="w-4 h-4"></i>Impor Data';
+                adminMenuModal.classList.remove('hidden');
+                updateStats();
+                renderStudentList();
+                uploadStatus.classList.add('hidden');
+              }, 1500);
+            } catch (error) {
+              console.error('Parse Error:', error);
+              showUploadStatus(`❌ Error parsing file: ${error.message}`, 'error');
+              uploadExcelBtn.disabled = false;
+              uploadExcelBtn.innerHTML = '<i data-lucide="upload" class="w-4 h-4"></i>Impor Data';
+            }
+          };
+          reader.onerror = () => {
+            showUploadStatus('❌ Gagal membaca file. Coba file lain.', 'error');
+            uploadExcelBtn.disabled = false;
+            uploadExcelBtn.innerHTML = '<i data-lucide="upload" class="w-4 h-4"></i>Impor Data';
+          };
+          reader.readAsArrayBuffer(file);
+        } catch (error) {
+          console.error('Upload Error:', error);
+          showUploadStatus(`❌ Error: ${error.message}`, 'error');
+          uploadExcelBtn.disabled = false;
+          uploadExcelBtn.innerHTML = '<i data-lucide="upload" class="w-4 h-4"></i>Impor Data';
+        }
+      });
+    });
+
+    function showUploadStatus(message, type) {
+      uploadStatus.textContent = message;
+      uploadStatus.className = `p-3 rounded-lg text-sm ${
+        type === 'success' 
+          ? 'bg-emerald-500/20 border border-emerald-500/50 text-emerald-300' 
+          : 'bg-red-500/20 border border-red-500/50 text-red-300'
+      }`;
+      uploadStatus.classList.remove('hidden');
+      if (type === 'success') {
+        setTimeout(() => uploadStatus.classList.add('hidden'), 3000);
+      }
+    }
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          const schoolName = config.school_name || defaultConfig.school_name;
+          const academicYear = config.academic_year || defaultConfig.academic_year;
+          const announcementTitle = config.announcement_title || defaultConfig.announcement_title;
+
+          document.getElementById('schoolNameDisplay').textContent = schoolName;
+          document.getElementById('academicYearDisplay').textContent = academicYear;
+          document.getElementById('announcementTitleDisplay').textContent = announcementTitle;
+          document.getElementById('resultSchoolName').textContent = schoolName;
+          document.getElementById('resultAcademicYear').textContent = academicYear;
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+            }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["school_name", config.school_name || defaultConfig.school_name],
+          ["academic_year", config.academic_year || defaultConfig.academic_year],
+          ["announcement_title", config.announcement_title || defaultConfig.announcement_title]
+        ])
+      });
+    }
+
+    // DOM Elements
+    const loginPage = document.getElementById('loginPage');
+    const resultPage = document.getElementById('resultPage');
+    const loginForm = document.getElementById('loginForm');
+    const namaInput = document.getElementById('namaInput');
+    const nisnInput = document.getElementById('nisnInput');
+    const errorMessage = document.getElementById('errorMessage');
+    const backButton = document.getElementById('backButton');
+
+    // Create confetti effect
+    function createConfetti() {
+      const container = document.getElementById('confettiContainer');
+      container.innerHTML = '';
+      const colors = ['#f59e0b', '#10b981', '#3b82f6', '#ec4899', '#8b5cf6', '#ffffff'];
+      
+      for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti-piece';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = '-10px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 2 + 's';
+        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        container.appendChild(confetti);
+      }
+
+      setTimeout(() => {
+        container.innerHTML = '';
+      }, 4000);
+    }
+
+    // Handle form submission
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const nama = namaInput.value.trim().toUpperCase();
+      const nisn = nisnInput.value.trim();
+
+      const student = studentData.find(s => 
+        s.nama === nama && s.nisn === nisn
+      );
+
+      if (student) {
+        errorMessage.classList.add('hidden');
+        showResult(student);
+      } else {
+        errorMessage.classList.remove('hidden');
+        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+
+    // Show result
+    function showResult(student) {
+      document.getElementById('resultNama').textContent = student.nama;
+      document.getElementById('resultNISN').textContent = student.nisn;
+      document.getElementById('resultKelas').textContent = student.kelas;
+      document.getElementById('resultTTL').textContent = student.ttl;
+      document.getElementById('resultStatus').textContent = student.status;
+
+      loginPage.classList.add('hidden');
+      resultPage.classList.remove('hidden');
+      resultPage.classList.add('flex');
+      
+      createConfetti();
+    }
+
+    // Back button handler
+    backButton.addEventListener('click', () => {
+      resultPage.classList.add('hidden');
+      resultPage.classList.remove('flex');
+      loginPage.classList.remove('hidden');
+      loginForm.reset();
+      errorMessage.classList.add('hidden');
+    });
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9de90fa135d74030',t:'MTc3Mzg4NzQ4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
